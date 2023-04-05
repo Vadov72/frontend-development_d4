@@ -1,0 +1,24 @@
+{% extends 'default.html' %}
+{% load custom_filters %}
+
+
+{% block title %}
+
+        NEW_DETAIL
+
+{% endblock title %}
+
+{% block content %}
+
+<div>
+    <h1>{{ new.preview_name|censor }}</h1>
+    <h1>{{ new.dateCreation|date:'d M Y, H:m'  }}</h1>
+    <p>{{ new.text|censor }}</p>
+    <p>{{ new.commentText }}</p>
+</div>
+<br>
+<div>
+    <a href="{% url 'news_update' new.id %}"> <button>Редактировать</button> </a>
+</div>
+
+{% endblock content %}
